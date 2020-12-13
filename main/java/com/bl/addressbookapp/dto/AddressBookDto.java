@@ -5,17 +5,26 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
 @Data
 @Getter
 @Setter
 public class AddressBookDto {
 
     private Long id;
+    @Pattern(regexp = "^[A-Z][a-zA-z\\s]{2,}$", message = "Contact Name Invalid!")
     private String name;
+    @NotEmpty(message = "Address Can't Be Empty!")
     private String address;
+    @NotEmpty(message = "City Can't Be Empty!")
     private String city;
+    @NotEmpty(message = "State Can't Be Empty!")
     private String state;
+    @NotEmpty(message = "Zip Can't Be Empty!")
     private String zip;
+    @Pattern(regexp = "^[98][0-9]{9}$", message = "Mobile No Invalid!")
     private String phone;
 
     public AddressBookDto() {

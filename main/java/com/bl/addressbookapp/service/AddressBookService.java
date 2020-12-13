@@ -34,7 +34,7 @@ public class AddressBookService {
                     addressBookDto.getPhone());
             return new AddressBookDto(addressBookRepository.save(addressBook));
         }
-        throw new DetailsNotProvidedExceptions("Invalid Data");
+        throw new DetailsNotProvidedExceptions("Invalid Input!");
     }
 
     public AddressBookDto UpdateContact(AddressBookDto addressBookDto) {
